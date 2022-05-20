@@ -11,17 +11,76 @@ class Fakultas extends StatelessWidget {
         InkWell(
           child: Container(
             decoration: BoxDecoration(border: Border.all()),
-            padding: EdgeInsets.all(14),
-            child: Text("baris 1"),
+            padding: EdgeInsets.all(25),
+            child: Center(
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 300,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text("FPMIPA", style: TextStyle(
+                                    fontWeight: FontWeight.w800, fontSize: 20)),
+                          ),
+                          Text("Fakultas Pendidikan Matematika dan Ilmu Pengetahuan Alam")
+                        ],
+                      ),
+                    ),
+                    Column(children: [
+                  Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Image.network(
+                        'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                        width: 80,
+                        height: 80,
+                      ))
+                ]),
+                  ],
+                ),
+            ),
           ),
           onTap: () {
-            //gunakan navigator untuk panggil RincianFakultas
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return RincianFakultas();
+            }));
           },
         ),
         Container(
             decoration: BoxDecoration(border: Border.all()),
-            padding: EdgeInsets.all(14),
-            child: Text("baris kedua")),
+            padding: EdgeInsets.all(25),
+            child: Center(
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 300,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Text("FPIPS",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w800, fontSize: 20)),
+                      ),
+                      Text(
+                          "Fakultas Pendidikan Ilmu Pengetahuan Sosial")
+                    ],
+                  ),
+                ),
+                Column(children: [
+                  Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Image.network(
+                        'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg',
+                        width: 80,
+                        height: 80,
+                      ))
+                ]),
+              ],
+            ),
+          ),
+            ),
       ]),
     );
   }
